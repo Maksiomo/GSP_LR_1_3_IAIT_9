@@ -35,6 +35,7 @@ namespace GSP_LR_1_3_IAIT_9
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -42,7 +43,7 @@ namespace GSP_LR_1_3_IAIT_9
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.Location = new System.Drawing.Point(533, 382);
+            this.button1.Location = new System.Drawing.Point(476, 382);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(182, 24);
             this.button1.TabIndex = 3;
@@ -59,9 +60,9 @@ namespace GSP_LR_1_3_IAIT_9
             "Красный",
             "Зелёный",
             "Синий"});
-            this.comboBox2.Location = new System.Drawing.Point(291, 382);
+            this.comboBox2.Location = new System.Drawing.Point(291, 385);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(236, 24);
+            this.comboBox2.Size = new System.Drawing.Size(179, 21);
             this.comboBox2.TabIndex = 2;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -72,9 +73,9 @@ namespace GSP_LR_1_3_IAIT_9
             this.comboBox1.Items.AddRange(new object[] {
             "Кубический сплайн",
             "Кривая Безье"});
-            this.comboBox1.Location = new System.Drawing.Point(3, 382);
+            this.comboBox1.Location = new System.Drawing.Point(3, 385);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(282, 24);
+            this.comboBox1.Size = new System.Drawing.Size(282, 21);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -86,6 +87,7 @@ namespace GSP_LR_1_3_IAIT_9
             this.flowLayoutPanel1.Controls.Add(this.comboBox1);
             this.flowLayoutPanel1.Controls.Add(this.comboBox2);
             this.flowLayoutPanel1.Controls.Add(this.button1);
+            this.flowLayoutPanel1.Controls.Add(this.checkBox1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 450);
@@ -104,6 +106,17 @@ namespace GSP_LR_1_3_IAIT_9
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(664, 382);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(132, 17);
+            this.checkBox1.TabIndex = 4;
+            this.checkBox1.Text = "Отображать условия";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -113,6 +126,7 @@ namespace GSP_LR_1_3_IAIT_9
             this.Name = "Form1";
             this.Text = "Form1";
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -126,6 +140,7 @@ namespace GSP_LR_1_3_IAIT_9
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

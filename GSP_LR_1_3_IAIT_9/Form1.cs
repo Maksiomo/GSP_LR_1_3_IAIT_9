@@ -17,6 +17,7 @@ namespace GSP_LR_1_3_IAIT_9
         Pen DrawPen = new Pen(Color.Black, 1);
         int SplineType = 0;
         const int np = 20;
+        bool ShowInput = false; // По умолчанию вводные вектора не отображаются
         Point[] ArPoints = new Point[np];
         int CountPoints = 0;
         public Form1()
@@ -106,23 +107,29 @@ namespace GSP_LR_1_3_IAIT_9
                 {
                     case 1: // первый вектор
                         {
-                            Color buf = DrawPen.Color;
-                            DrawPen.Color = Color.BlueViolet;
-                            DrawPen.CustomEndCap = new AdjustableArrowCap(6, 6);
-                            g.DrawLine(DrawPen, ArPoints[0], ArPoints[1]);
-                            DrawPen.CustomEndCap = new AdjustableArrowCap(0, 0);
-                            DrawPen.Color = buf;
+                            if (ShowInput)
+                            {
+                                Color buf = DrawPen.Color;
+                                DrawPen.Color = Color.BlueViolet;
+                                DrawPen.CustomEndCap = new AdjustableArrowCap(6, 6);
+                                g.DrawLine(DrawPen, ArPoints[0], ArPoints[1]);
+                                DrawPen.CustomEndCap = new AdjustableArrowCap(0, 0);
+                                DrawPen.Color = buf;
+                            }
                             CountPoints++;
                         }
                         break;
                     case 3: // второй вектор
                         {
-                            Color buf = DrawPen.Color;
-                            DrawPen.Color = Color.BlueViolet;
-                            DrawPen.CustomEndCap = new AdjustableArrowCap(6, 6);
-                            g.DrawLine(DrawPen, ArPoints[2], ArPoints[3]);
-                            DrawPen.CustomEndCap = new AdjustableArrowCap(0, 0);
-                            DrawPen.Color = buf;
+                            if (ShowInput)
+                            {
+                                Color buf = DrawPen.Color;
+                                DrawPen.Color = Color.BlueViolet;
+                                DrawPen.CustomEndCap = new AdjustableArrowCap(6, 6);
+                                g.DrawLine(DrawPen, ArPoints[2], ArPoints[3]);
+                                DrawPen.CustomEndCap = new AdjustableArrowCap(0, 0);
+                                DrawPen.Color = buf;
+                            }
                             DrawCubeSpline(DrawPen, ArPoints);
                             CountPoints = 0;
                         }
@@ -136,8 +143,7 @@ namespace GSP_LR_1_3_IAIT_9
             {
                 if (e.Button == MouseButtons.Right) // Конец ввода
                 {
-                    if (CountPoints > 0)
-                    {
+                    if (CountPoints > 0 && ShowInput) {
                         Color buf = DrawPen.Color;
                         DrawPen.Color = Color.BlueViolet;
                         g.DrawLine(DrawPen, ArPoints[CountPoints - 1], ArPoints[CountPoints]);
@@ -148,8 +154,7 @@ namespace GSP_LR_1_3_IAIT_9
                 }
                 else
                 {
-                    if (CountPoints > 0)
-                    {
+                    if (CountPoints > 0 && ShowInput) {
                         Color buf = DrawPen.Color;
                         DrawPen.Color = Color.BlueViolet;
                         g.DrawLine(DrawPen, ArPoints[CountPoints - 1], ArPoints[CountPoints]);
@@ -184,6 +189,11 @@ namespace GSP_LR_1_3_IAIT_9
                 case 3: DrawPen.Color = Color.Blue;
                     break;
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowInput = checkBox1.Checked;
         }
     }
 }
